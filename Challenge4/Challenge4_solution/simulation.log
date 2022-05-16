@@ -1,0 +1,114 @@
+********************************************
+*                                          *
+*             TOSSIM Script                *
+*                                          *
+********************************************
+Initializing mac....
+Initializing radio channels....
+    using topology file: topology.txt
+    using noise file: meyer-heavy.txt
+Initializing simulator....
+Activate debug message on channel init
+Activate debug message on channel boot
+Activate debug message on channel send_req
+Activate debug message on channel mote2
+Activate debug message on channel common
+Creating node 1...
+>>>Will boot at time 0 [sec]
+Creating node 2...
+>>>Will boot at time 38 [sec]
+Creating radio channels...
+>>>Setting radio channel from node  1  to node  2  with gain  -60.0  dBm
+>>>Setting radio channel from node  2  to node  1  with gain  -60.0  dBm
+Initializing Closest Pattern Matching (CPM)...
+Reading noise model data file: meyer-heavy.txt
+Loading:##Done!
+>>>Creating noise model for node: 1
+>>>Creating noise model for node: 2
+Start simulation with TOSSIM! 
+
+
+
+DEBUG (1): Application booted.
+DEBUG (1): Antenna succesfully started!
+DEBUG (1): REQ sent, counter: 1.
+DEBUG (1): REQ sent, counter: 2.
+DEBUG (1): REQ sent, counter: 3.
+DEBUG (1): REQ sent, counter: 4.
+DEBUG (1): REQ sent, counter: 5.
+DEBUG (1): REQ sent, counter: 6.
+DEBUG (1): REQ sent, counter: 7.
+DEBUG (1): REQ sent, counter: 8.
+DEBUG (1): REQ sent, counter: 9.
+DEBUG (1): REQ sent, counter: 10.
+DEBUG (1): REQ sent, counter: 11.
+DEBUG (1): REQ sent, counter: 12.
+DEBUG (1): REQ sent, counter: 13.
+DEBUG (1): REQ sent, counter: 14.
+DEBUG (1): REQ sent, counter: 15.
+DEBUG (1): REQ sent, counter: 16.
+DEBUG (1): REQ sent, counter: 17.
+DEBUG (1): REQ sent, counter: 18.
+DEBUG (1): REQ sent, counter: 19.
+DEBUG (1): REQ sent, counter: 20.
+DEBUG (1): REQ sent, counter: 21.
+DEBUG (1): REQ sent, counter: 22.
+DEBUG (1): REQ sent, counter: 23.
+DEBUG (1): REQ sent, counter: 24.
+DEBUG (1): REQ sent, counter: 25.
+DEBUG (1): REQ sent, counter: 26.
+DEBUG (1): REQ sent, counter: 27.
+DEBUG (1): REQ sent, counter: 28.
+DEBUG (1): REQ sent, counter: 29.
+DEBUG (1): REQ sent, counter: 30.
+DEBUG (1): REQ sent, counter: 31.
+DEBUG (1): REQ sent, counter: 32.
+DEBUG (1): REQ sent, counter: 33.
+DEBUG (1): REQ sent, counter: 34.
+DEBUG (1): REQ sent, counter: 35.
+DEBUG (1): REQ sent, counter: 36.
+DEBUG (1): REQ sent, counter: 37.
+DEBUG (1): REQ sent, counter: 38.
+DEBUG (2): Application booted.
+DEBUG (2): Antenna succesfully started!
+DEBUG (2): Sending the response to request with counter = 39.
+DEBUG (1): REQ sent, counter: 39.
+DEBUG (1): Ack number 1 received.
+DEBUG (1): Received  RESP for packet with counter 39: value = 245
+DEBUG (2): RESP sent, counter: 39.
+DEBUG (2): RESP acked.
+DEBUG (2): Sending the response to request with counter = 40.
+DEBUG (1): REQ sent, counter: 40.
+DEBUG (1): Ack number 2 received.
+DEBUG (1): Received  RESP for packet with counter 40: value = 211
+DEBUG (2): RESP sent, counter: 40.
+DEBUG (2): RESP acked.
+DEBUG (2): Sending the response to request with counter = 41.
+DEBUG (1): REQ sent, counter: 41.
+DEBUG (1): Ack number 3 received.
+DEBUG (1): Received  RESP for packet with counter 41: value = 141
+DEBUG (2): RESP sent, counter: 41.
+DEBUG (2): RESP acked.
+DEBUG (2): Sending the response to request with counter = 42.
+DEBUG (1): REQ sent, counter: 42.
+DEBUG (1): Ack number 4 received.
+DEBUG (1): Received  RESP for packet with counter 42: value = 127
+DEBUG (2): RESP sent, counter: 42.
+DEBUG (2): RESP acked.
+DEBUG (2): Sending the response to request with counter = 43.
+DEBUG (1): REQ sent, counter: 43.
+DEBUG (1): Ack number 5 received.
+DEBUG (1): Received  RESP for packet with counter 43: value = 135
+DEBUG (2): RESP sent, counter: 43.
+DEBUG (2): RESP acked.
+DEBUG (2): Sending the response to request with counter = 44.
+DEBUG (1): REQ sent, counter: 44.
+DEBUG (1): Ack number 6 received.
+DEBUG (1): Timer stopped
+DEBUG (1): Received  RESP for packet with counter 44: value = 88
+DEBUG (2): RESP sent, counter: 44.
+DEBUG (2): RESP acked.
+
+
+
+Simulation finished!

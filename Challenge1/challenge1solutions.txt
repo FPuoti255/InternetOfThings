@@ -1,0 +1,111 @@
+---- Challenge 1 solutions----
+
+NB: IN THE SOLUTION EXCLUDE ALL THE MALFORMED PACKETS
+
+1) What are the differences between the request with MID: 53533 and the one with MID: 42804
+
+The packet with MID 53533 is CONfirmable, the other one is NON confirmable. Moreover the first one is a GET request, the second one is a DELETE
+Filter: coap.mid == 53533 || coap.mid==42804
+So the answer should highlight the difference in both Type and Method
+
+
+
+2) What is the response of message No. 2428, if any?
+
+Take the frame, check the token and hence get the response -> “coap.token == 67:c7:22:9a”
+The client receive as response the packet No. 2429 with code 2.02 Deleted 
+
+
+
+
+3) How many replies to requests of type confirmable, having result code “Content” are received by the client “localhost”?
+
+responses to CON messages can be of type ACK or CON!
+ip.dst == 127.0.0.1 && coap.code == 69 && (coap.type == 2 || coap.type == 0)
+Answer: 8
+
+
+
+
+4) How many GET requests, excluding OBSERVE requests, have been directed to non existing resources?
+
+Non existing resources means 4.04 not found response code (code 132)
+
+Take only get requests excluding observe and search for GET - 4.04 pairs
+(coap.code == 1 &&  !coap.opt.observe) || coap.code == 132
+The filter shows only GET(no observe) requests and only 4.04 responses. Hence consider only the 4.04 corresponding to the displayed GETs
+
+ANSWER: 6
+
+
+
+
+5) How many messages containing the topic “factory/department*/+” are published by a client with user password: “admin”? Where * replaces only the dep. number [0-9], e.g. factory/department1/+, factory/department2/+ and so on. (btw, * is NOT an MQTT wildcard)
+
+ZERO, no publishes match the topics. 
+Remember that the + is a single-level wildcard (i.e. factory/department2/aaaaa, factory/department2/bbbbb) and factory/department2/aaaaa/1111/3333 is not valid). (tricky question btw)
+
+So the answer is 0
+
+
+
+
+
+
+6) How many clients connected to the public broker “mosquitto” have specified a will message?
+
+	+ get the ip address related to mosquitto: dns.a && dns.qry.name == "test.mosquitto.org"
+	+ (ip.dst == 5.196.95.208) && mqtt.conflag.willflag == 1
+
+Clients with same id (e.g. empty id) but different ports should be counted as different clients
+ANSWER: 9 clients
+
+
+
+
+
+
+7) How many publishes with QoS 2 don’t receive the PUBREL? (NEXT YEAR SET THIS TO PUBCOMP OR PUBREC PLS)
+
+with "mqtt.msgtype == 6" we take all the PUBREL (0)
+hence all the qos2 publish did not receive the pubrel 
+take all qos = 2 publish message with: "mqtt.qos==2 and mqtt.msgtype==2" -> 94 values
+ANSWER: 94
+
+Other possible solution: The publishers do not receive PUBREL but instead send it -> then the answer is still 94
+
+
+
+
+
+
+8) What is the average Will Topic Length specified by clients with empty Client ID?
+
+take connect packet and then filter by client id empty. Take the length of will topic there and take the mean
+	filter: mqtt.clientid=="" and mqtt.conflag.willflag == 1  (37 packets or 22 depending on WS version) 
+
+Mean will topic length: 37.05 or 37.77
+
+
+
+
+
+9) How many ACKs received the client with ID "6M5H8y3HJD5h4EEscWknTD"? What type(s) is(are) it(them)?
+
+take connect with mqtt.clientid=="6M5H8y3HJD5h4EEscWknTD" then follow the tcp stream
+tcp.stream eq 281 && mqtt
+
+TOTALLY 5 ACKS:      1 CONNACK      3 SUBACK      1 PUBACK
+
+WARNING: the 3 SUBACK are all in a single packet
+
+
+
+
+
+10) What is the average message length of the CONNECT messages using mqttv3.1 protocol? Why messages have different size?
+
+filter: mqtt.msgtype==1 && mqtt.ver == 3
+then take the mean of the MQTT Msg Len value (NOT the packet/frame length!)
+
+ANSWER: 63.59 

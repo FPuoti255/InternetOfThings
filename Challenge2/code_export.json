@@ -1,0 +1,290 @@
+[
+    {
+        "id": "e94e7619.4a7b6",
+        "type": "csv",
+        "z": "b5d1af96.0416f8",
+        "name": "csv_parser",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": false,
+        "include_null_values": false,
+        "x": 430,
+        "y": 140,
+        "wires": [
+            [
+                "9e0851b2.90abf8"
+            ]
+        ]
+    },
+    {
+        "id": "360023b7.ff44c4",
+        "type": "file in",
+        "z": "b5d1af96.0416f8",
+        "name": "read_csv",
+        "filename": "/data/iot-feeds.csv",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "allProps": false,
+        "x": 260,
+        "y": 140,
+        "wires": [
+            [
+                "e94e7619.4a7b6"
+            ]
+        ]
+    },
+    {
+        "id": "29ac0cb8.359e4c",
+        "type": "inject",
+        "z": "b5d1af96.0416f8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 140,
+        "wires": [
+            [
+                "360023b7.ff44c4"
+            ]
+        ]
+    },
+    {
+        "id": "9e0851b2.90abf8",
+        "type": "function",
+        "z": "b5d1af96.0416f8",
+        "name": "data_filter",
+        "func": "last_digits = 5640\nif(msg.payload.code >= last_digits && msg.payload.code <last_digits + 100){\n    return msg\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 140,
+        "wires": [
+            [
+                "95808a05ecff54c9",
+                "d1d682a.66d408"
+            ]
+        ]
+    },
+    {
+        "id": "c604bc26.b1cef",
+        "type": "delay",
+        "z": "b5d1af96.0416f8",
+        "name": "delay_2xmin",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "2",
+        "nbRateUnits": "1",
+        "rateUnits": "minute",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1030,
+        "y": 80,
+        "wires": [
+            [
+                "3b6ae6d654944351"
+            ]
+        ]
+    },
+    {
+        "id": "d1d682a.66d408",
+        "type": "function",
+        "z": "b5d1af96.0416f8",
+        "name": "preparing_mqtt_msg",
+        "func": "var field1 = msg.payload.field1\nvar field2 = msg.payload.field2\nvar field5 = msg.payload.field5\n\nvar my_topic = \"channels/1711368/publish\"\nvar my_payload = \"field1=\"+field1+\"&field2=\"+field2+\"&field5=\"+field5\n\nreturn {topic : my_topic , payload : my_payload}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 820,
+        "y": 80,
+        "wires": [
+            [
+                "c604bc26.b1cef"
+            ]
+        ]
+    },
+    {
+        "id": "3b6ae6d654944351",
+        "type": "mqtt out",
+        "z": "b5d1af96.0416f8",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "5e9f9be596844e7a",
+        "x": 1190,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "95808a05ecff54c9",
+        "type": "join",
+        "z": "b5d1af96.0416f8",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "100",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "num",
+        "reduceFixup": "",
+        "x": 770,
+        "y": 200,
+        "wires": [
+            [
+                "7d9fc40b4ad8b088"
+            ]
+        ]
+    },
+    {
+        "id": "7d9fc40b4ad8b088",
+        "type": "function",
+        "z": "b5d1af96.0416f8",
+        "name": "preparing_chart_msg",
+        "func": "\n\nvar series = [Array(100)]\nvar labels = [Array(100)]\n\nfor (let i =0; i< msg.payload.length; i++){\n    series[0][i] ={ \"x\" : msg.payload[i].code, \"y\" : msg.payload[i].field5}\n    labels[0][i] = String(msg.payload[i].code)\n}\n\nvar chart = [{\n    \"series\" : [\"RSSI\"],\n    \"data\" : series\n}]\n\n\nmsg.payload = chart\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 980,
+        "y": 200,
+        "wires": [
+            [
+                "6bb06209e830c52f"
+            ]
+        ]
+    },
+    {
+        "id": "6bb06209e830c52f",
+        "type": "ui_chart",
+        "z": "b5d1af96.0416f8",
+        "name": "RSSI",
+        "group": "7a3ee65d6a8ffef5",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "RSSI",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "x",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": true,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "1",
+        "removeOlderPoints": "100",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1190,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5e9f9be596844e7a",
+        "type": "mqtt-broker",
+        "name": "thingspeak",
+        "broker": "mqtt3.thingspeak.com",
+        "port": "1883",
+        "clientid": "NTExMSEZMS83HxMLCRIaHDY",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "7a3ee65d6a8ffef5",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "43aa1f9c4f9f0077",
+        "order": 1,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "43aa1f9c4f9f0077",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
