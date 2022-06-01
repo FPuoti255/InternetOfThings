@@ -102,7 +102,7 @@ implementation {
 
   event void TimerMissing.fired() {
     dbg("TimerMissing", "TimerMissing: timer fired at time %s\n", sim_time_string());
-    dbg("Info", "ALERT: MISSING\n");
+    dbg("Info", "ALARM: MISSING\n");
     dbg("Info","Last known location: %hhu, Y: %hhu\n", last_status.X, last_status.Y);
   }
 

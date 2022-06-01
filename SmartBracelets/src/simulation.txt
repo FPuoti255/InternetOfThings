@@ -71,625 +71,644 @@ DEBUG (2): Pairing phase started
 DEBUG (0): TimerPairing: timer fired at time 0:0:0.244140635
 DEBUG (0): Radio: sending pairing packet, key=qD2UjB93kvyULDJMnGNq
 DEBUG (2): TimerPairing: timer fired at time 0:0:0.244140635
-DEBUG (2): Radio: sending pairing packet, key=qRBX45SQM0vjfzh9W8kD
+DEBUG (2): Radio: sending pairing packet, key=nuyb8byn98uiyi8u9uBF
 DEBUG (3): TimerPairing: timer fired at time 0:0:0.244140635
-DEBUG (3): Radio: sending pairing packet, key=qRBX45SQM0vjfzh9W8kD
+DEBUG (3): Radio: sending pairing packet, key=nuyb8byn98uiyi8u9uBF
 DEBUG (1): TimerPairing: timer fired at time 0:0:0.244140635
 DEBUG (1): Radio: sending pairing packet, key=qD2UjB93kvyULDJMnGNq
-DEBUG (2): Message received from node 3 at time 0:0:0.247055046
-DEBUG (2): Payload: type: 0, msg_id: 1, data: qRBX45SQM0vjfzh9W8kD
+DEBUG (3): Message received from node 2 at time 0:0:0.250274632
+DEBUG (3): Payload: type: 0, msg_id: 1, data: nuyb8byn98uiyi8u9uBF
+DEBUG (3): Message for pairing phase 0 received. Address: 2
+DEBUG (1): Message received from node 2 at time 0:0:0.250274632
+DEBUG (1): Payload: type: 0, msg_id: 1, data: nuyb8byn98uiyi8u9uBF
+DEBUG (0): Message received from node 2 at time 0:0:0.250274632
+DEBUG (0): Payload: type: 0, msg_id: 1, data: nuyb8byn98uiyi8u9uBF
+DEBUG (2): Packet sent
+DEBUG (1): Message received from node 3 at time 0:0:0.252731283
+DEBUG (1): Payload: type: 0, msg_id: 1, data: nuyb8byn98uiyi8u9uBF
+DEBUG (0): Message received from node 3 at time 0:0:0.252731283
+DEBUG (0): Payload: type: 0, msg_id: 1, data: nuyb8byn98uiyi8u9uBF
+DEBUG (2): Message received from node 3 at time 0:0:0.252731283
+DEBUG (2): Payload: type: 0, msg_id: 1, data: nuyb8byn98uiyi8u9uBF
 DEBUG (2): Message for pairing phase 0 received. Address: 3
-DEBUG (1): Message received from node 3 at time 0:0:0.247055046
-DEBUG (1): Payload: type: 0, msg_id: 1, data: qRBX45SQM0vjfzh9W8kD
-DEBUG (0): Message received from node 3 at time 0:0:0.247055046
-DEBUG (0): Payload: type: 0, msg_id: 1, data: qRBX45SQM0vjfzh9W8kD
+DEBUG (2): Radio: sanding pairing confirmation to node 3
 DEBUG (3): Packet sent
-DEBUG (3): Message received from node 0 at time 0:0:0.248519881
+DEBUG (3): Pairing ack not received at time 0:0:0.252899128
+DEBUG (3): Radio: sanding pairing confirmation to node 2
+DEBUG (3): Message received from node 0 at time 0:0:0.254455516
 DEBUG (3): Payload: type: 0, msg_id: 1, data: qD2UjB93kvyULDJMnGNq
-DEBUG (2): Message received from node 0 at time 0:0:0.248519881
-DEBUG (2): Payload: type: 0, msg_id: 1, data: qD2UjB93kvyULDJMnGNq
-DEBUG (1): Message received from node 0 at time 0:0:0.248519881
+DEBUG (1): Message received from node 0 at time 0:0:0.254455516
 DEBUG (1): Payload: type: 0, msg_id: 1, data: qD2UjB93kvyULDJMnGNq
 DEBUG (1): Message for pairing phase 0 received. Address: 0
+DEBUG (2): Message received from node 0 at time 0:0:0.254455516
+DEBUG (2): Payload: type: 0, msg_id: 1, data: qD2UjB93kvyULDJMnGNq
 DEBUG (0): Packet sent
-DEBUG (0): Message received from node 1 at time 0:0:0.253768874
+DEBUG (2): Message received from node 1 at time 0:0:0.255981386
+DEBUG (2): Payload: type: 0, msg_id: 1, data: qD2UjB93kvyULDJMnGNq
+DEBUG (0): Message received from node 1 at time 0:0:0.255981386
 DEBUG (0): Payload: type: 0, msg_id: 1, data: qD2UjB93kvyULDJMnGNq
 DEBUG (0): Message for pairing phase 0 received. Address: 1
 DEBUG (0): Radio: sanding pairing confirmation to node 1
-DEBUG (3): Message received from node 1 at time 0:0:0.253768874
+DEBUG (3): Message received from node 1 at time 0:0:0.255981386
 DEBUG (3): Payload: type: 0, msg_id: 1, data: qD2UjB93kvyULDJMnGNq
-DEBUG (2): Message received from node 1 at time 0:0:0.253768874
-DEBUG (2): Payload: type: 0, msg_id: 1, data: qD2UjB93kvyULDJMnGNq
 DEBUG (1): Packet sent
-DEBUG (1): Pairing ack not received at time 0:0:0.253936720
+DEBUG (1): Pairing ack not received at time 0:0:0.256149231
 DEBUG (1): Radio: sanding pairing confirmation to node 0
-DEBUG (1): Message received from node 2 at time 0:0:0.255813540
-DEBUG (1): Payload: type: 0, msg_id: 1, data: qRBX45SQM0vjfzh9W8kD
-DEBUG (0): Message received from node 2 at time 0:0:0.255813540
-DEBUG (0): Payload: type: 0, msg_id: 1, data: qRBX45SQM0vjfzh9W8kD
-DEBUG (3): Message received from node 2 at time 0:0:0.255813540
-DEBUG (3): Payload: type: 0, msg_id: 1, data: qRBX45SQM0vjfzh9W8kD
-DEBUG (3): Message for pairing phase 0 received. Address: 2
-DEBUG (3): Radio: sanding pairing confirmation to node 2
-DEBUG (2): Packet sent
-DEBUG (2): Pairing ack not received at time 0:0:0.255981386
-DEBUG (2): Radio: sanding pairing confirmation to node 3
-DEBUG (1): Message received from node 0 at time 0:0:0.259353558
-DEBUG (1): Payload: type: 1, msg_id: 2, data: qD2UjB93kvyULDJMnGNq
-DEBUG (1): Message for pairing phase 1 received
-DEBUG (0): Packet sent
-DEBUG (0): Pairing ack received at time 0:0:0.259521404
-DEBUG (0): Pairing phase 1 completed for node: 1
-
-DEBUG (0): Parent bracelet
-DEBUG (2): Message received from node 3 at time 0:0:0.261840727
-DEBUG (2): Payload: type: 1, msg_id: 2, data: qRBX45SQM0vjfzh9W8kD
-DEBUG (2): Message for pairing phase 1 received
-DEBUG (3): Packet sent
-DEBUG (3): Pairing ack received at time 0:0:0.262008572
-DEBUG (3): Pairing phase 1 completed for node: 2
-
-DEBUG (3): Child bracelet
-DEBUG (0): Message received from node 1 at time 0:0:0.264587293
-DEBUG (0): Payload: type: 1, msg_id: 3, data: qD2UjB93kvyULDJMnGNq
-DEBUG (0): Message for pairing phase 1 received
-DEBUG (1): Packet sent
-DEBUG (1): Pairing ack received at time 0:0:0.264755138
-DEBUG (1): Pairing phase 1 completed for node: 0
-
-DEBUG (1): Child bracelet
-DEBUG (3): Message received from node 2 at time 0:0:0.267593256
-DEBUG (3): Payload: type: 1, msg_id: 3, data: qRBX45SQM0vjfzh9W8kD
+DEBUG (3): Message received from node 2 at time 0:0:0.258117604
+DEBUG (3): Payload: type: 1, msg_id: 2, data: nuyb8byn98uiyi8u9uBF
 DEBUG (3): Message for pairing phase 1 received
 DEBUG (2): Packet sent
-DEBUG (2): Pairing ack received at time 0:0:0.267761102
+DEBUG (2): Pairing ack received at time 0:0:0.258285449
 DEBUG (2): Pairing phase 1 completed for node: 3
 
 DEBUG (2): Parent bracelet
-DEBUG (3): Sensing: timer fired at time 0:0:10.027343760
+DEBUG (2): Message received from node 3 at time 0:0:0.260742100
+DEBUG (2): Payload: type: 1, msg_id: 3, data: nuyb8byn98uiyi8u9uBF
+DEBUG (2): Message for pairing phase 1 received
+DEBUG (3): Packet sent
+DEBUG (3): Pairing ack received at time 0:0:0.260909946
+DEBUG (3): Pairing phase 1 completed for node: 2
+
+DEBUG (3): Child bracelet
+DEBUG (0): Message received from node 1 at time 0:0:0.262985129
+DEBUG (0): Payload: type: 1, msg_id: 3, data: qD2UjB93kvyULDJMnGNq
+DEBUG (0): Message for pairing phase 1 received
+DEBUG (1): Packet sent
+DEBUG (1): Pairing ack received at time 0:0:0.263152975
+DEBUG (1): Pairing phase 1 completed for node: 0
+
+DEBUG (1): Child bracelet
+DEBUG (1): Message received from node 0 at time 0:0:0.265365486
+DEBUG (1): Payload: type: 1, msg_id: 2, data: qD2UjB93kvyULDJMnGNq
+DEBUG (1): Message for pairing phase 1 received
+DEBUG (0): Packet sent
+DEBUG (0): Pairing ack received at time 0:0:0.265533332
+DEBUG (0): Pairing phase 1 completed for node: 1
+
+DEBUG (0): Parent bracelet
+DEBUG (3): Sensing: timer fired at time 0:0:10.026367197
 DEBUG (3): Sensor status: STANDING
-DEBUG (3): Position X: 248, Y: 226
+DEBUG (3): Position X: 168, Y: 210
 DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
-DEBUG (1): Sensing: timer fired at time 0:0:10.030273447
+DEBUG (1): Sensing: timer fired at time 0:0:10.028320322
 DEBUG (1): Sensor status: WALKING
-DEBUG (1): Position X: 248, Y: 226
+DEBUG (1): Position X: 168, Y: 210
 DEBUG (1): Radio: sanding INFO packet to node 0, attempt: 1
-DEBUG (2): Message received from node 3 at time 0:0:10.033111558
-DEBUG (2): Payload: type: 2, msg_id: 3, data: STANDING
+DEBUG (2): Message received from node 3 at time 0:0:10.029922484
+DEBUG (2): Payload: type: 2, msg_id: 4, data: STANDING
 DEBUG (2): INFO message received
-DEBUG (2): Position X: 248, Y: 226
+DEBUG (2): Position X: 168, Y: 210
 DEBUG (2): Sensor status: STANDING
 DEBUG (3): Packet sent
-DEBUG (3): INFO ack received at time 0:0:10.033279404
-DEBUG (0): Message received from node 1 at time 0:0:10.040954547
+DEBUG (3): INFO ack received at time 0:0:10.030090330
+DEBUG (0): Message received from node 1 at time 0:0:10.035430886
 DEBUG (0): Payload: type: 2, msg_id: 4, data: WALKING
 DEBUG (0): INFO message received
-DEBUG (0): Position X: 248, Y: 226
+DEBUG (0): Position X: 168, Y: 210
 DEBUG (0): Sensor status: WALKING
 DEBUG (1): Packet sent
-DEBUG (1): INFO ack received at time 0:0:10.041122393
-DEBUG (3): Sensing: timer fired at time 0:0:19.792968760
+DEBUG (1): INFO ack received at time 0:0:10.035598732
+DEBUG (3): Sensing: timer fired at time 0:0:19.791992197
 DEBUG (3): Sensor status: RUNNING
-DEBUG (3): Position X: 248, Y: 226
+DEBUG (3): Position X: 168, Y: 210
 DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
-DEBUG (2): Message received from node 3 at time 0:0:19.795715336
-DEBUG (2): Payload: type: 2, msg_id: 4, data: RUNNING
-DEBUG (2): INFO message received
-DEBUG (2): Position X: 248, Y: 226
-DEBUG (2): Sensor status: RUNNING
-DEBUG (3): Packet sent
-DEBUG (3): INFO ack received at time 0:0:19.795883181
-DEBUG (1): Sensing: timer fired at time 0:0:19.795898447
+DEBUG (1): Sensing: timer fired at time 0:0:19.793945322
 DEBUG (1): Sensor status: RUNNING
-DEBUG (1): Position X: 248, Y: 226
+DEBUG (1): Position X: 168, Y: 210
 DEBUG (1): Radio: sanding INFO packet to node 0, attempt: 1
-DEBUG (0): Message received from node 1 at time 0:0:19.804809538
-DEBUG (0): Payload: type: 2, msg_id: 5, data: RUNNING
+DEBUG (1): Packet sent
+DEBUG (1): INFO ack not received at time 0:0:19.803710900
+DEBUG (1): Radio: sanding INFO packet to node 0, attempt: 2
+DEBUG (3): Packet sent
+DEBUG (3): INFO ack not received at time 0:0:19.803863476
+DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 2
+DEBUG (0): Message received from node 1 at time 0:0:19.808761530
+DEBUG (0): Payload: type: 2, msg_id: 6, data: RUNNING
 DEBUG (0): INFO message received
-DEBUG (0): Position X: 248, Y: 226
+DEBUG (0): Position X: 168, Y: 210
 DEBUG (0): Sensor status: RUNNING
 DEBUG (1): Packet sent
-DEBUG (1): INFO ack received at time 0:0:19.804977384
-DEBUG (3): Sensing: timer fired at time 0:0:29.558593760
-DEBUG (3): Sensor status: STANDING
-DEBUG (3): Position X: 248, Y: 226
-DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
-DEBUG (1): Sensing: timer fired at time 0:0:29.561523447
-DEBUG (1): Sensor status: STANDING
-DEBUG (1): Position X: 248, Y: 226
-DEBUG (1): Radio: sanding INFO packet to node 0, attempt: 1
-DEBUG (2): Message received from node 3 at time 0:0:29.563079827
-DEBUG (2): Payload: type: 2, msg_id: 5, data: STANDING
-DEBUG (2): INFO message received
-DEBUG (2): Position X: 248, Y: 226
-DEBUG (2): Sensor status: STANDING
-DEBUG (3): Packet sent
-DEBUG (3): INFO ack received at time 0:0:29.563247673
-DEBUG (0): Message received from node 1 at time 0:0:29.566253654
-DEBUG (0): Payload: type: 2, msg_id: 6, data: STANDING
-DEBUG (0): INFO message received
-DEBUG (0): Position X: 248, Y: 226
-DEBUG (0): Sensor status: STANDING
-DEBUG (1): Packet sent
-DEBUG (1): INFO ack received at time 0:0:29.566421500
-DEBUG (3): Sensing: timer fired at time 0:0:39.324218760
-DEBUG (3): Sensor status: RUNNING
-DEBUG (3): Position X: 248, Y: 226
-DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
-DEBUG (1): Sensing: timer fired at time 0:0:39.327148447
-DEBUG (1): Sensor status: WALKING
-DEBUG (1): Position X: 248, Y: 226
-DEBUG (1): Radio: sanding INFO packet to node 0, attempt: 1
-DEBUG (2): Message received from node 3 at time 0:0:39.331085185
+DEBUG (1): INFO ack received at time 0:0:19.808929375
+DEBUG (2): Message received from node 3 at time 0:0:19.812148950
 DEBUG (2): Payload: type: 2, msg_id: 6, data: RUNNING
 DEBUG (2): INFO message received
-DEBUG (2): Position X: 248, Y: 226
+DEBUG (2): Position X: 168, Y: 210
 DEBUG (2): Sensor status: RUNNING
 DEBUG (3): Packet sent
-DEBUG (3): INFO ack received at time 0:0:39.331253030
-DEBUG (0): Message received from node 1 at time 0:0:39.333847026
-DEBUG (0): Payload: type: 2, msg_id: 7, data: WALKING
-DEBUG (0): INFO message received
-DEBUG (0): Position X: 248, Y: 226
-DEBUG (0): Sensor status: WALKING
-DEBUG (1): Packet sent
-DEBUG (1): INFO ack received at time 0:0:39.334014872
-DEBUG (3): Sensing: timer fired at time 0:0:49.089843760
-DEBUG (3): Sensor status: WALKING
-DEBUG (3): Position X: 248, Y: 226
-DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
-DEBUG (2): Message received from node 3 at time 0:0:49.092422490
-DEBUG (2): Payload: type: 2, msg_id: 7, data: WALKING
-DEBUG (2): INFO message received
-DEBUG (2): Position X: 248, Y: 226
-DEBUG (2): Sensor status: WALKING
-DEBUG (3): Packet sent
-DEBUG (3): INFO ack received at time 0:0:49.092590336
-DEBUG (1): Sensing: timer fired at time 0:0:49.092773447
-DEBUG (1): Sensor status: RUNNING
-DEBUG (1): Position X: 248, Y: 226
-DEBUG (1): Radio: sanding INFO packet to node 0, attempt: 1
-DEBUG (0): Message received from node 1 at time 0:0:49.101867642
-DEBUG (0): Payload: type: 2, msg_id: 8, data: RUNNING
-DEBUG (0): INFO message received
-DEBUG (0): Position X: 248, Y: 226
-DEBUG (0): Sensor status: RUNNING
-DEBUG (1): Packet sent
-DEBUG (1): INFO ack received at time 0:0:49.102035488
-DEBUG (3): Sensing: timer fired at time 0:0:58.855468760
-DEBUG (3): Sensor status: RUNNING
-DEBUG (3): Position X: 248, Y: 226
-DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
-DEBUG (1): Sensing: timer fired at time 0:0:58.858398447
-DEBUG (1): Sensor status: WALKING
-DEBUG (1): Position X: 248, Y: 226
-DEBUG (1): Radio: sanding INFO packet to node 0, attempt: 1
-DEBUG (2): Message received from node 3 at time 0:0:58.866958571
-DEBUG (2): Payload: type: 2, msg_id: 8, data: RUNNING
-DEBUG (2): INFO message received
-DEBUG (2): Position X: 248, Y: 226
-DEBUG (2): Sensor status: RUNNING
-DEBUG (3): Packet sent
-DEBUG (3): INFO ack received at time 0:0:58.867126416
-DEBUG (0): Message received from node 1 at time 0:0:58.869720412
-DEBUG (0): Payload: type: 2, msg_id: 9, data: WALKING
-DEBUG (0): INFO message received
-DEBUG (0): Position X: 248, Y: 226
-DEBUG (0): Sensor status: WALKING
-DEBUG (1): Packet sent
-DEBUG (1): INFO ack received at time 0:0:58.869888258
-DEBUG (3): Sensing: timer fired at time 0:1:8.621093760
+DEBUG (3): INFO ack received at time 0:0:19.812316795
+DEBUG (3): Sensing: timer fired at time 0:0:29.557617197
 DEBUG (3): Sensor status: STANDING
-DEBUG (3): Position X: 248, Y: 226
+DEBUG (3): Position X: 168, Y: 210
 DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
-DEBUG (1): Sensing: timer fired at time 0:1:8.624023447
-DEBUG (1): Sensor status: RUNNING
-DEBUG (1): Position X: 248, Y: 226
+DEBUG (1): Sensing: timer fired at time 0:0:29.559570322
+DEBUG (1): Sensor status: STANDING
+DEBUG (1): Position X: 168, Y: 210
 DEBUG (1): Radio: sanding INFO packet to node 0, attempt: 1
-DEBUG (2): Message received from node 3 at time 0:1:8.628967259
-DEBUG (2): Payload: type: 2, msg_id: 9, data: STANDING
+DEBUG (2): Message received from node 3 at time 0:0:29.565902681
+DEBUG (2): Payload: type: 2, msg_id: 7, data: STANDING
 DEBUG (2): INFO message received
-DEBUG (2): Position X: 248, Y: 226
+DEBUG (2): Position X: 168, Y: 210
 DEBUG (2): Sensor status: STANDING
 DEBUG (3): Packet sent
-DEBUG (3): INFO ack received at time 0:1:8.629135104
-DEBUG (0): Message received from node 1 at time 0:1:8.634124716
-DEBUG (0): Payload: type: 2, msg_id: 10, data: RUNNING
+DEBUG (3): INFO ack received at time 0:0:29.566070527
+DEBUG (0): Message received from node 1 at time 0:0:29.568145721
+DEBUG (0): Payload: type: 2, msg_id: 7, data: STANDING
 DEBUG (0): INFO message received
-DEBUG (0): Position X: 248, Y: 226
-DEBUG (0): Sensor status: RUNNING
-DEBUG (1): Packet sent
-DEBUG (1): INFO ack received at time 0:1:8.634292562
-DEBUG (3): Sensing: timer fired at time 0:1:18.386718760
-DEBUG (3): Sensor status: STANDING
-DEBUG (3): Position X: 248, Y: 226
-DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
-DEBUG (1): Sensing: timer fired at time 0:1:18.389648447
-DEBUG (1): Sensor status: STANDING
-DEBUG (1): Position X: 248, Y: 226
-DEBUG (1): Radio: sanding INFO packet to node 0, attempt: 1
-DEBUG (0): Message received from node 1 at time 0:1:18.394409171
-DEBUG (0): Payload: type: 2, msg_id: 11, data: STANDING
-DEBUG (0): INFO message received
-DEBUG (0): Position X: 248, Y: 226
+DEBUG (0): Position X: 168, Y: 210
 DEBUG (0): Sensor status: STANDING
 DEBUG (1): Packet sent
-DEBUG (1): INFO ack received at time 0:1:18.394577017
-DEBUG (2): Message received from node 3 at time 0:1:18.398178053
-DEBUG (2): Payload: type: 2, msg_id: 10, data: STANDING
+DEBUG (1): INFO ack received at time 0:0:29.568313567
+DEBUG (3): Sensing: timer fired at time 0:0:39.323242197
+DEBUG (3): Sensor status: RUNNING
+DEBUG (3): Position X: 168, Y: 210
+DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
+DEBUG (1): Sensing: timer fired at time 0:0:39.325195322
+DEBUG (1): Sensor status: WALKING
+DEBUG (1): Position X: 168, Y: 210
+DEBUG (1): Radio: sanding INFO packet to node 0, attempt: 1
+DEBUG (2): Message received from node 3 at time 0:0:39.326553345
+DEBUG (2): Payload: type: 2, msg_id: 8, data: RUNNING
 DEBUG (2): INFO message received
-DEBUG (2): Position X: 248, Y: 226
+DEBUG (2): Position X: 168, Y: 210
+DEBUG (2): Sensor status: RUNNING
+DEBUG (3): Packet sent
+DEBUG (3): INFO ack received at time 0:0:39.326721191
+DEBUG (0): Message received from node 1 at time 0:0:39.329650872
+DEBUG (0): Payload: type: 2, msg_id: 8, data: WALKING
+DEBUG (0): INFO message received
+DEBUG (0): Position X: 168, Y: 210
+DEBUG (0): Sensor status: WALKING
+DEBUG (1): Packet sent
+DEBUG (1): INFO ack received at time 0:0:39.329818718
+DEBUG (3): Sensing: timer fired at time 0:0:49.088867197
+DEBUG (3): Sensor status: WALKING
+DEBUG (3): Position X: 168, Y: 210
+DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
+DEBUG (1): Sensing: timer fired at time 0:0:49.090820322
+DEBUG (1): Sensor status: RUNNING
+DEBUG (1): Position X: 168, Y: 210
+DEBUG (1): Radio: sanding INFO packet to node 0, attempt: 1
+DEBUG (2): Message received from node 3 at time 0:0:49.094650254
+DEBUG (2): Payload: type: 2, msg_id: 9, data: WALKING
+DEBUG (2): INFO message received
+DEBUG (2): Position X: 168, Y: 210
+DEBUG (2): Sensor status: WALKING
+DEBUG (3): Packet sent
+DEBUG (3): INFO ack received at time 0:0:49.094818100
+DEBUG (0): Message received from node 1 at time 0:0:49.098327612
+DEBUG (0): Payload: type: 2, msg_id: 9, data: RUNNING
+DEBUG (0): INFO message received
+DEBUG (0): Position X: 168, Y: 210
+DEBUG (0): Sensor status: RUNNING
+DEBUG (1): Packet sent
+DEBUG (1): INFO ack received at time 0:0:49.098495458
+DEBUG (3): Sensing: timer fired at time 0:0:58.854492197
+DEBUG (3): Sensor status: RUNNING
+DEBUG (3): Position X: 168, Y: 210
+DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
+DEBUG (1): Sensing: timer fired at time 0:0:58.856445322
+DEBUG (1): Sensor status: WALKING
+DEBUG (1): Position X: 168, Y: 210
+DEBUG (1): Radio: sanding INFO packet to node 0, attempt: 1
+DEBUG (2): Message received from node 3 at time 0:0:58.858673091
+DEBUG (2): Payload: type: 2, msg_id: 10, data: RUNNING
+DEBUG (2): INFO message received
+DEBUG (2): Position X: 168, Y: 210
+DEBUG (2): Sensor status: RUNNING
+DEBUG (3): Packet sent
+DEBUG (3): INFO ack received at time 0:0:58.858840937
+DEBUG (0): Message received from node 1 at time 0:0:58.864074682
+DEBUG (0): Payload: type: 2, msg_id: 10, data: WALKING
+DEBUG (0): INFO message received
+DEBUG (0): Position X: 168, Y: 210
+DEBUG (0): Sensor status: WALKING
+DEBUG (1): Packet sent
+DEBUG (1): INFO ack received at time 0:0:58.864242528
+DEBUG (3): Sensing: timer fired at time 0:1:8.620117197
+DEBUG (3): Sensor status: STANDING
+DEBUG (3): Position X: 168, Y: 210
+DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
+DEBUG (1): Sensing: timer fired at time 0:1:8.622070322
+DEBUG (1): Sensor status: RUNNING
+DEBUG (1): Position X: 168, Y: 210
+DEBUG (1): Radio: sanding INFO packet to node 0, attempt: 1
+DEBUG (3): Packet sent
+DEBUG (3): INFO ack not received at time 0:1:8.623703002
+DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 2
+DEBUG (0): Message received from node 1 at time 0:1:8.625961301
+DEBUG (0): Payload: type: 2, msg_id: 11, data: RUNNING
+DEBUG (0): INFO message received
+DEBUG (0): Position X: 168, Y: 210
+DEBUG (0): Sensor status: RUNNING
+DEBUG (1): Packet sent
+DEBUG (1): INFO ack received at time 0:1:8.626129146
+DEBUG (2): Message received from node 3 at time 0:1:8.632614082
+DEBUG (2): Payload: type: 2, msg_id: 12, data: STANDING
+DEBUG (2): INFO message received
+DEBUG (2): Position X: 168, Y: 210
 DEBUG (2): Sensor status: STANDING
 DEBUG (3): Packet sent
-DEBUG (3): INFO ack received at time 0:1:18.398345899
+DEBUG (3): INFO ack received at time 0:1:8.632781928
+DEBUG (3): Sensing: timer fired at time 0:1:18.385742197
+DEBUG (3): Sensor status: STANDING
+DEBUG (3): Position X: 168, Y: 210
+DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
+DEBUG (1): Sensing: timer fired at time 0:1:18.387695322
+DEBUG (1): Sensor status: STANDING
+DEBUG (1): Position X: 168, Y: 210
+DEBUG (1): Radio: sanding INFO packet to node 0, attempt: 1
+DEBUG (0): Message received from node 1 at time 0:1:18.389968878
+DEBUG (0): Payload: type: 2, msg_id: 12, data: STANDING
+DEBUG (0): INFO message received
+DEBUG (0): Position X: 168, Y: 210
+DEBUG (0): Sensor status: STANDING
+DEBUG (1): Packet sent
+DEBUG (1): INFO ack received at time 0:1:18.390136724
+DEBUG (2): Message received from node 3 at time 0:1:18.395324671
+DEBUG (2): Payload: type: 2, msg_id: 13, data: STANDING
+DEBUG (2): INFO message received
+DEBUG (2): Position X: 168, Y: 210
+DEBUG (2): Sensor status: STANDING
+DEBUG (3): Packet sent
+DEBUG (3): INFO ack not received at time 0:1:18.395492516
+DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 2
+DEBUG (2): Message received from node 3 at time 0:1:18.403777990
+DEBUG (2): Payload: type: 2, msg_id: 14, data: STANDING
+DEBUG (2): INFO message received
+DEBUG (2): Position X: 168, Y: 210
+DEBUG (2): Sensor status: STANDING
+DEBUG (3): Packet sent
+DEBUG (3): INFO ack received at time 0:1:18.403945836
 
 >>SHUTTING DOWN NODE n 1 <<
 
-DEBUG (3): Sensing: timer fired at time 0:1:28.152343760
+DEBUG (3): Sensing: timer fired at time 0:1:28.151367197
 DEBUG (3): Sensor status: WALKING
-DEBUG (3): Position X: 248, Y: 226
+DEBUG (3): Position X: 168, Y: 210
 DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
-DEBUG (2): Message received from node 3 at time 0:1:28.160324070
-DEBUG (2): Payload: type: 2, msg_id: 11, data: WALKING
+DEBUG (2): Message received from node 3 at time 0:1:28.155761713
+DEBUG (2): Payload: type: 2, msg_id: 15, data: WALKING
 DEBUG (2): INFO message received
-DEBUG (2): Position X: 248, Y: 226
+DEBUG (2): Position X: 168, Y: 210
 DEBUG (2): Sensor status: WALKING
 DEBUG (3): Packet sent
-DEBUG (3): INFO ack received at time 0:1:28.160491915
-DEBUG (3): Sensing: timer fired at time 0:1:37.917968760
+DEBUG (3): INFO ack received at time 0:1:28.155929558
+DEBUG (3): Sensing: timer fired at time 0:1:37.916992197
 DEBUG (3): Sensor status: WALKING
-DEBUG (3): Position X: 248, Y: 226
+DEBUG (3): Position X: 168, Y: 210
 DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
-DEBUG (2): Message received from node 3 at time 0:1:37.925186135
-DEBUG (2): Payload: type: 2, msg_id: 12, data: WALKING
+DEBUG (2): Message received from node 3 at time 0:1:37.919357306
+DEBUG (2): Payload: type: 2, msg_id: 16, data: WALKING
 DEBUG (2): INFO message received
-DEBUG (2): Position X: 248, Y: 226
+DEBUG (2): Position X: 168, Y: 210
 DEBUG (2): Sensor status: WALKING
 DEBUG (3): Packet sent
-DEBUG (3): INFO ack received at time 0:1:37.925353980
-DEBUG (3): Sensing: timer fired at time 0:1:47.683593760
+DEBUG (3): INFO ack received at time 0:1:37.919525151
+DEBUG (3): Sensing: timer fired at time 0:1:47.682617197
 DEBUG (3): Sensor status: FALLING
-DEBUG (3): Position X: 248, Y: 226
+DEBUG (3): Position X: 168, Y: 210
 DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
+DEBUG (2): Message received from node 3 at time 0:1:47.685638430
+DEBUG (2): Payload: type: 2, msg_id: 17, data: FALLING
+DEBUG (2): INFO message received
+DEBUG (2): Position X: 168, Y: 210
+DEBUG (2): Sensor status: FALLING
+DEBUG (2): ALARM: FALLING!
 DEBUG (3): Packet sent
-DEBUG (3): INFO ack not received at time 0:1:47.691772433
+DEBUG (3): INFO ack received at time 0:1:47.685806275
+DEBUG (3): Sensing: timer fired at time 0:1:57.448242197
+DEBUG (3): Sensor status: STANDING
+DEBUG (3): Position X: 168, Y: 210
+DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
+DEBUG (2): Message received from node 3 at time 0:1:57.457519497
+DEBUG (2): Payload: type: 2, msg_id: 18, data: STANDING
+DEBUG (2): INFO message received
+DEBUG (2): Position X: 168, Y: 210
+DEBUG (2): Sensor status: STANDING
+DEBUG (3): Packet sent
+DEBUG (3): INFO ack not received at time 0:1:57.457687342
 DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 2
-DEBUG (2): Message received from node 3 at time 0:1:47.701995762
-DEBUG (2): Payload: type: 2, msg_id: 14, data: FALLING
+DEBUG (2): Message received from node 3 at time 0:1:57.461395206
+DEBUG (2): Payload: type: 2, msg_id: 19, data: STANDING
 DEBUG (2): INFO message received
-DEBUG (2): Position X: 248, Y: 226
-DEBUG (2): Sensor status: FALLING
-DEBUG (2): ALARM: FALLING!
-DEBUG (3): Packet sent
-DEBUG (3): INFO ack received at time 0:1:47.702163607
-DEBUG (3): Sensing: timer fired at time 0:1:57.449218760
-DEBUG (3): Sensor status: STANDING
-DEBUG (3): Position X: 248, Y: 226
-DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
-DEBUG (2): Message received from node 3 at time 0:1:57.452865599
-DEBUG (2): Payload: type: 2, msg_id: 15, data: STANDING
-DEBUG (2): INFO message received
-DEBUG (2): Position X: 248, Y: 226
+DEBUG (2): Position X: 168, Y: 210
 DEBUG (2): Sensor status: STANDING
 DEBUG (3): Packet sent
-DEBUG (3): INFO ack received at time 0:1:57.453033445
-DEBUG (3): Sensing: timer fired at time 0:2:7.214843760
+DEBUG (3): INFO ack received at time 0:1:57.461563052
+DEBUG (3): Sensing: timer fired at time 0:2:7.213867197
 DEBUG (3): Sensor status: STANDING
-DEBUG (3): Position X: 248, Y: 226
+DEBUG (3): Position X: 168, Y: 210
 DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
-DEBUG (2): Message received from node 3 at time 0:2:7.223785368
-DEBUG (2): Payload: type: 2, msg_id: 16, data: STANDING
+DEBUG (2): Message received from node 3 at time 0:2:7.218078608
+DEBUG (2): Payload: type: 2, msg_id: 20, data: STANDING
 DEBUG (2): INFO message received
-DEBUG (2): Position X: 248, Y: 226
+DEBUG (2): Position X: 168, Y: 210
 DEBUG (2): Sensor status: STANDING
 DEBUG (3): Packet sent
-DEBUG (3): INFO ack received at time 0:2:7.223953213
-DEBUG (3): Sensing: timer fired at time 0:2:16.980468760
+DEBUG (3): INFO ack received at time 0:2:7.218246454
+DEBUG (3): Sensing: timer fired at time 0:2:16.979492197
 DEBUG (3): Sensor status: WALKING
-DEBUG (3): Position X: 248, Y: 226
+DEBUG (3): Position X: 168, Y: 210
 DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
-DEBUG (0): TimerMissing: timer fired at time 0:2:16.987304697
-DEBUG (0): ALERT: MISSING
-DEBUG (0): Last known location: 248, Y: 226
-DEBUG (2): Message received from node 3 at time 0:2:16.991348223
-DEBUG (2): Payload: type: 2, msg_id: 17, data: WALKING
+DEBUG (0): TimerMissing: timer fired at time 0:2:16.983398447
+DEBUG (0): ALARM: MISSING
+DEBUG (0): Last known location: 168, Y: 210
+DEBUG (2): Message received from node 3 at time 0:2:16.990814162
+DEBUG (2): Payload: type: 2, msg_id: 21, data: WALKING
 DEBUG (2): INFO message received
-DEBUG (2): Position X: 248, Y: 226
+DEBUG (2): Position X: 168, Y: 210
 DEBUG (2): Sensor status: WALKING
 DEBUG (3): Packet sent
-DEBUG (3): INFO ack received at time 0:2:16.991516068
-DEBUG (3): Sensing: timer fired at time 0:2:26.746093760
+DEBUG (3): INFO ack received at time 0:2:16.990982008
+DEBUG (3): Sensing: timer fired at time 0:2:26.745117197
 DEBUG (3): Sensor status: WALKING
-DEBUG (3): Position X: 248, Y: 226
+DEBUG (3): Position X: 168, Y: 210
 DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
-DEBUG (2): Message received from node 3 at time 0:2:26.755203213
-DEBUG (2): Payload: type: 2, msg_id: 18, data: WALKING
+DEBUG (2): Message received from node 3 at time 0:2:26.752929661
+DEBUG (2): Payload: type: 2, msg_id: 22, data: WALKING
 DEBUG (2): INFO message received
-DEBUG (2): Position X: 248, Y: 226
+DEBUG (2): Position X: 168, Y: 210
 DEBUG (2): Sensor status: WALKING
 DEBUG (3): Packet sent
-DEBUG (3): INFO ack received at time 0:2:26.755371059
-DEBUG (3): Sensing: timer fired at time 0:2:36.511718760
+DEBUG (3): INFO ack received at time 0:2:26.753097507
+DEBUG (3): Sensing: timer fired at time 0:2:36.510742197
 DEBUG (3): Sensor status: RUNNING
-DEBUG (3): Position X: 248, Y: 226
+DEBUG (3): Position X: 168, Y: 210
 DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
-DEBUG (2): Message received from node 3 at time 0:2:36.515899653
-DEBUG (2): Payload: type: 2, msg_id: 19, data: RUNNING
+DEBUG (2): Message received from node 3 at time 0:2:36.515487663
+DEBUG (2): Payload: type: 2, msg_id: 23, data: RUNNING
 DEBUG (2): INFO message received
-DEBUG (2): Position X: 248, Y: 226
+DEBUG (2): Position X: 168, Y: 210
 DEBUG (2): Sensor status: RUNNING
 DEBUG (3): Packet sent
-DEBUG (3): INFO ack received at time 0:2:36.516067499
-DEBUG (3): Sensing: timer fired at time 0:2:46.277343760
+DEBUG (3): INFO ack received at time 0:2:36.515655508
+DEBUG (3): Sensing: timer fired at time 0:2:46.276367197
 DEBUG (3): Sensor status: WALKING
-DEBUG (3): Position X: 248, Y: 226
+DEBUG (3): Position X: 168, Y: 210
 DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
-DEBUG (2): Message received from node 3 at time 0:2:46.282852160
-DEBUG (2): Payload: type: 2, msg_id: 20, data: WALKING
+DEBUG (2): Message received from node 3 at time 0:2:46.286071740
+DEBUG (2): Payload: type: 2, msg_id: 24, data: WALKING
 DEBUG (2): INFO message received
-DEBUG (2): Position X: 248, Y: 226
+DEBUG (2): Position X: 168, Y: 210
 DEBUG (2): Sensor status: WALKING
 DEBUG (3): Packet sent
-DEBUG (3): INFO ack received at time 0:2:46.283020006
-DEBUG (3): Sensing: timer fired at time 0:2:56.042968760
+DEBUG (3): INFO ack received at time 0:2:46.286239586
+DEBUG (3): Sensing: timer fired at time 0:2:56.041992197
 DEBUG (3): Sensor status: STANDING
-DEBUG (3): Position X: 248, Y: 226
+DEBUG (3): Position X: 168, Y: 210
 DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
-DEBUG (2): Message received from node 3 at time 0:2:56.054092362
-DEBUG (2): Payload: type: 2, msg_id: 21, data: STANDING
-DEBUG (2): INFO message received
-DEBUG (2): Position X: 248, Y: 226
-DEBUG (2): Sensor status: STANDING
-DEBUG (3): Packet sent
-DEBUG (3): INFO ack received at time 0:2:56.054260208
-DEBUG (3): Sensing: timer fired at time 0:3:5.808593760
-DEBUG (3): Sensor status: FALLING
-DEBUG (3): Position X: 248, Y: 226
-DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
-DEBUG (2): Message received from node 3 at time 0:3:5.813247673
-DEBUG (2): Payload: type: 2, msg_id: 22, data: FALLING
-DEBUG (2): INFO message received
-DEBUG (2): Position X: 248, Y: 226
-DEBUG (2): Sensor status: FALLING
-DEBUG (2): ALARM: FALLING!
-DEBUG (3): Packet sent
-DEBUG (3): INFO ack received at time 0:3:5.813415519
-DEBUG (3): Sensing: timer fired at time 0:3:15.574218760
-DEBUG (3): Sensor status: WALKING
-DEBUG (3): Position X: 248, Y: 226
-DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
-DEBUG (2): Message received from node 3 at time 0:3:15.579788195
-DEBUG (2): Payload: type: 2, msg_id: 23, data: WALKING
-DEBUG (2): INFO message received
-DEBUG (2): Position X: 248, Y: 226
-DEBUG (2): Sensor status: WALKING
-DEBUG (3): Packet sent
-DEBUG (3): INFO ack received at time 0:3:15.579956041
-DEBUG (3): Sensing: timer fired at time 0:3:25.339843760
-DEBUG (3): Sensor status: RUNNING
-DEBUG (3): Position X: 248, Y: 226
-DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
-DEBUG (2): Message received from node 3 at time 0:3:25.346679667
-DEBUG (2): Payload: type: 2, msg_id: 24, data: RUNNING
-DEBUG (2): INFO message received
-DEBUG (2): Position X: 248, Y: 226
-DEBUG (2): Sensor status: RUNNING
-DEBUG (3): Packet sent
-DEBUG (3): INFO ack received at time 0:3:25.346847513
-DEBUG (3): Sensing: timer fired at time 0:3:35.105468760
-DEBUG (3): Sensor status: STANDING
-DEBUG (3): Position X: 248, Y: 226
-DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
-DEBUG (2): Message received from node 3 at time 0:3:35.113937348
+DEBUG (2): Message received from node 3 at time 0:2:56.050979581
 DEBUG (2): Payload: type: 2, msg_id: 25, data: STANDING
 DEBUG (2): INFO message received
-DEBUG (2): Position X: 248, Y: 226
+DEBUG (2): Position X: 168, Y: 210
 DEBUG (2): Sensor status: STANDING
 DEBUG (3): Packet sent
-DEBUG (3): INFO ack received at time 0:3:35.114105194
-DEBUG (3): Sensing: timer fired at time 0:3:44.871093760
-DEBUG (3): Sensor status: WALKING
-DEBUG (3): Position X: 248, Y: 226
-DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
-DEBUG (2): Message received from node 3 at time 0:3:44.881195029
-DEBUG (2): Payload: type: 2, msg_id: 26, data: WALKING
-DEBUG (2): INFO message received
-DEBUG (2): Position X: 248, Y: 226
-DEBUG (2): Sensor status: WALKING
-DEBUG (3): Packet sent
-DEBUG (3): INFO ack received at time 0:3:44.881362875
-DEBUG (3): Sensing: timer fired at time 0:3:54.636718760
-DEBUG (3): Sensor status: RUNNING
-DEBUG (3): Position X: 248, Y: 226
-DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
-DEBUG (2): Message received from node 3 at time 0:3:54.639236455
-DEBUG (2): Payload: type: 2, msg_id: 27, data: RUNNING
-DEBUG (2): INFO message received
-DEBUG (2): Position X: 248, Y: 226
-DEBUG (2): Sensor status: RUNNING
-DEBUG (3): Packet sent
-DEBUG (3): INFO ack received at time 0:3:54.639404301
-DEBUG (3): Sensing: timer fired at time 0:4:4.402343760
+DEBUG (3): INFO ack received at time 0:2:56.051147427
+DEBUG (3): Sensing: timer fired at time 0:3:5.807617197
 DEBUG (3): Sensor status: FALLING
-DEBUG (3): Position X: 248, Y: 226
+DEBUG (3): Position X: 168, Y: 210
 DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
-DEBUG (2): Message received from node 3 at time 0:4:4.410537691
-DEBUG (2): Payload: type: 2, msg_id: 28, data: FALLING
+DEBUG (2): Message received from node 3 at time 0:3:5.814498881
+DEBUG (2): Payload: type: 2, msg_id: 26, data: FALLING
 DEBUG (2): INFO message received
-DEBUG (2): Position X: 248, Y: 226
+DEBUG (2): Position X: 168, Y: 210
 DEBUG (2): Sensor status: FALLING
 DEBUG (2): ALARM: FALLING!
 DEBUG (3): Packet sent
-DEBUG (3): INFO ack received at time 0:4:4.410705537
-DEBUG (3): Sensing: timer fired at time 0:4:14.167968760
-DEBUG (3): Sensor status: RUNNING
-DEBUG (3): Position X: 248, Y: 226
+DEBUG (3): INFO ack received at time 0:3:5.814666726
+DEBUG (3): Sensing: timer fired at time 0:3:15.573242197
+DEBUG (3): Sensor status: WALKING
+DEBUG (3): Position X: 168, Y: 210
 DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
-DEBUG (2): Message received from node 3 at time 0:4:14.178802447
-DEBUG (2): Payload: type: 2, msg_id: 29, data: RUNNING
+DEBUG (2): Message received from node 3 at time 0:3:15.582565273
+DEBUG (2): Payload: type: 2, msg_id: 27, data: WALKING
 DEBUG (2): INFO message received
-DEBUG (2): Position X: 248, Y: 226
+DEBUG (2): Position X: 168, Y: 210
+DEBUG (2): Sensor status: WALKING
+DEBUG (3): Packet sent
+DEBUG (3): INFO ack received at time 0:3:15.582733118
+DEBUG (3): Sensing: timer fired at time 0:3:25.338867197
+DEBUG (3): Sensor status: RUNNING
+DEBUG (3): Position X: 168, Y: 210
+DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
+DEBUG (2): Message received from node 3 at time 0:3:25.349914506
+DEBUG (2): Payload: type: 2, msg_id: 28, data: RUNNING
+DEBUG (2): INFO message received
+DEBUG (2): Position X: 168, Y: 210
 DEBUG (2): Sensor status: RUNNING
 DEBUG (3): Packet sent
-DEBUG (3): INFO ack received at time 0:4:14.178970292
-DEBUG (3): Sensing: timer fired at time 0:4:23.933593760
-DEBUG (3): Sensor status: WALKING
-DEBUG (3): Position X: 248, Y: 226
+DEBUG (3): INFO ack received at time 0:3:25.350082352
+DEBUG (3): Sensing: timer fired at time 0:3:35.104492197
+DEBUG (3): Sensor status: STANDING
+DEBUG (3): Position X: 168, Y: 210
 DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
-DEBUG (2): Message received from node 3 at time 0:4:23.943832357
+DEBUG (2): Message received from node 3 at time 0:3:35.108001708
+DEBUG (2): Payload: type: 2, msg_id: 29, data: STANDING
+DEBUG (2): INFO message received
+DEBUG (2): Position X: 168, Y: 210
+DEBUG (2): Sensor status: STANDING
+DEBUG (3): Packet sent
+DEBUG (3): INFO ack received at time 0:3:35.108169554
+DEBUG (3): Sensing: timer fired at time 0:3:44.870117197
+DEBUG (3): Sensor status: WALKING
+DEBUG (3): Position X: 168, Y: 210
+DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
+DEBUG (2): Message received from node 3 at time 0:3:44.876693707
 DEBUG (2): Payload: type: 2, msg_id: 30, data: WALKING
 DEBUG (2): INFO message received
-DEBUG (2): Position X: 248, Y: 226
+DEBUG (2): Position X: 168, Y: 210
 DEBUG (2): Sensor status: WALKING
 DEBUG (3): Packet sent
-DEBUG (3): INFO ack received at time 0:4:23.944000203
-DEBUG (3): Sensing: timer fired at time 0:4:33.699218760
-DEBUG (3): Sensor status: STANDING
-DEBUG (3): Position X: 248, Y: 226
+DEBUG (3): INFO ack received at time 0:3:44.876861552
+DEBUG (3): Sensing: timer fired at time 0:3:54.635742197
+DEBUG (3): Sensor status: RUNNING
+DEBUG (3): Position X: 168, Y: 210
 DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
-DEBUG (2): Message received from node 3 at time 0:4:33.708770716
-DEBUG (2): Payload: type: 2, msg_id: 31, data: STANDING
+DEBUG (2): Message received from node 3 at time 0:3:54.642486552
+DEBUG (2): Payload: type: 2, msg_id: 31, data: RUNNING
 DEBUG (2): INFO message received
-DEBUG (2): Position X: 248, Y: 226
-DEBUG (2): Sensor status: STANDING
+DEBUG (2): Position X: 168, Y: 210
+DEBUG (2): Sensor status: RUNNING
 DEBUG (3): Packet sent
-DEBUG (3): INFO ack received at time 0:4:33.708938561
-DEBUG (3): Sensing: timer fired at time 0:4:43.464843760
+DEBUG (3): INFO ack received at time 0:3:54.642654398
+DEBUG (3): Sensing: timer fired at time 0:4:4.401367197
 DEBUG (3): Sensor status: FALLING
-DEBUG (3): Position X: 248, Y: 226
+DEBUG (3): Position X: 168, Y: 210
 DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
-DEBUG (2): Message received from node 3 at time 0:4:43.476104690
+DEBUG (2): Message received from node 3 at time 0:4:4.407760602
 DEBUG (2): Payload: type: 2, msg_id: 32, data: FALLING
 DEBUG (2): INFO message received
-DEBUG (2): Position X: 248, Y: 226
+DEBUG (2): Position X: 168, Y: 210
 DEBUG (2): Sensor status: FALLING
 DEBUG (2): ALARM: FALLING!
 DEBUG (3): Packet sent
-DEBUG (3): INFO ack received at time 0:4:43.476272536
-DEBUG (3): Sensing: timer fired at time 0:4:53.230468760
-DEBUG (3): Sensor status: STANDING
-DEBUG (3): Position X: 248, Y: 226
-DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
-DEBUG (2): Message received from node 3 at time 0:4:53.233810425
-DEBUG (2): Payload: type: 2, msg_id: 33, data: STANDING
-DEBUG (2): INFO message received
-DEBUG (2): Position X: 248, Y: 226
-DEBUG (2): Sensor status: STANDING
-DEBUG (3): Packet sent
-DEBUG (3): INFO ack received at time 0:4:53.233978271
-DEBUG (3): Sensing: timer fired at time 0:5:2.996093760
-DEBUG (3): Sensor status: STANDING
-DEBUG (3): Position X: 248, Y: 226
-DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
-DEBUG (2): Message received from node 3 at time 0:5:3.005203213
-DEBUG (2): Payload: type: 2, msg_id: 34, data: STANDING
-DEBUG (2): INFO message received
-DEBUG (2): Position X: 248, Y: 226
-DEBUG (2): Sensor status: STANDING
-DEBUG (3): Packet sent
-DEBUG (3): INFO ack received at time 0:5:3.005371059
-DEBUG (3): Sensing: timer fired at time 0:5:12.761718760
-DEBUG (3): Sensor status: STANDING
-DEBUG (3): Position X: 248, Y: 226
-DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
-DEBUG (2): Message received from node 3 at time 0:5:12.772903397
-DEBUG (2): Payload: type: 2, msg_id: 35, data: STANDING
-DEBUG (2): INFO message received
-DEBUG (2): Position X: 248, Y: 226
-DEBUG (2): Sensor status: STANDING
-DEBUG (3): Packet sent
-DEBUG (3): INFO ack received at time 0:5:12.773071242
-DEBUG (3): Sensing: timer fired at time 0:5:22.527343760
-DEBUG (3): Sensor status: WALKING
-DEBUG (3): Position X: 248, Y: 226
-DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
-DEBUG (2): Message received from node 3 at time 0:5:22.530441286
-DEBUG (2): Payload: type: 2, msg_id: 36, data: WALKING
-DEBUG (2): INFO message received
-DEBUG (2): Position X: 248, Y: 226
-DEBUG (2): Sensor status: WALKING
-DEBUG (3): Packet sent
-DEBUG (3): INFO ack received at time 0:5:22.530609131
-DEBUG (3): Sensing: timer fired at time 0:5:32.292968760
-DEBUG (3): Sensor status: STANDING
-DEBUG (3): Position X: 248, Y: 226
-DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
-DEBUG (2): Message received from node 3 at time 0:5:32.296600340
-DEBUG (2): Payload: type: 2, msg_id: 37, data: STANDING
-DEBUG (2): INFO message received
-DEBUG (2): Position X: 248, Y: 226
-DEBUG (2): Sensor status: STANDING
-DEBUG (3): Packet sent
-DEBUG (3): INFO ack received at time 0:5:32.296768186
-DEBUG (3): Sensing: timer fired at time 0:5:42.058593760
-DEBUG (3): Sensor status: WALKING
-DEBUG (3): Position X: 248, Y: 226
-DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
-DEBUG (2): Message received from node 3 at time 0:5:42.061233525
-DEBUG (2): Payload: type: 2, msg_id: 38, data: WALKING
-DEBUG (2): INFO message received
-DEBUG (2): Position X: 248, Y: 226
-DEBUG (2): Sensor status: WALKING
-DEBUG (3): Packet sent
-DEBUG (3): INFO ack received at time 0:5:42.061401370
-DEBUG (3): Sensing: timer fired at time 0:5:51.824218760
-DEBUG (3): Sensor status: STANDING
-DEBUG (3): Position X: 248, Y: 226
-DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
-DEBUG (2): Message received from node 3 at time 0:5:51.827163699
-DEBUG (2): Payload: type: 2, msg_id: 39, data: STANDING
-DEBUG (2): INFO message received
-DEBUG (2): Position X: 248, Y: 226
-DEBUG (2): Sensor status: STANDING
-DEBUG (3): Packet sent
-DEBUG (3): INFO ack received at time 0:5:51.827331544
-DEBUG (3): Sensing: timer fired at time 0:6:1.589843760
-DEBUG (3): Sensor status: STANDING
-DEBUG (3): Position X: 248, Y: 226
-DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
-DEBUG (2): Message received from node 3 at time 0:6:1.593276977
-DEBUG (2): Payload: type: 2, msg_id: 40, data: STANDING
-DEBUG (2): INFO message received
-DEBUG (2): Position X: 248, Y: 226
-DEBUG (2): Sensor status: STANDING
-DEBUG (3): Packet sent
-DEBUG (3): INFO ack received at time 0:6:1.593444823
-DEBUG (3): Sensing: timer fired at time 0:6:11.355468760
+DEBUG (3): INFO ack received at time 0:4:4.407928448
+DEBUG (3): Sensing: timer fired at time 0:4:14.166992197
 DEBUG (3): Sensor status: RUNNING
-DEBUG (3): Position X: 248, Y: 226
+DEBUG (3): Position X: 168, Y: 210
 DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
-DEBUG (2): Message received from node 3 at time 0:6:11.360290519
-DEBUG (2): Payload: type: 2, msg_id: 41, data: RUNNING
+DEBUG (2): Message received from node 3 at time 0:4:14.171234126
+DEBUG (2): Payload: type: 2, msg_id: 33, data: RUNNING
 DEBUG (2): INFO message received
-DEBUG (2): Position X: 248, Y: 226
+DEBUG (2): Position X: 168, Y: 210
 DEBUG (2): Sensor status: RUNNING
 DEBUG (3): Packet sent
-DEBUG (3): INFO ack received at time 0:6:11.360458364
-DEBUG (3): Sensing: timer fired at time 0:6:21.121093760
-DEBUG (3): Sensor status: STANDING
-DEBUG (3): Position X: 248, Y: 226
+DEBUG (3): INFO ack received at time 0:4:14.171401971
+DEBUG (3): Sensing: timer fired at time 0:4:23.932617197
+DEBUG (3): Sensor status: WALKING
+DEBUG (3): Position X: 168, Y: 210
 DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
-DEBUG (2): Message received from node 3 at time 0:6:21.126480091
+DEBUG (2): Message received from node 3 at time 0:4:23.937225334
+DEBUG (2): Payload: type: 2, msg_id: 34, data: WALKING
+DEBUG (2): INFO message received
+DEBUG (2): Position X: 168, Y: 210
+DEBUG (2): Sensor status: WALKING
+DEBUG (3): Packet sent
+DEBUG (3): INFO ack received at time 0:4:23.937393180
+DEBUG (3): Sensing: timer fired at time 0:4:33.698242197
+DEBUG (3): Sensor status: STANDING
+DEBUG (3): Position X: 168, Y: 210
+DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
+DEBUG (2): Message received from node 3 at time 0:4:33.707290616
+DEBUG (2): Payload: type: 2, msg_id: 35, data: STANDING
+DEBUG (2): INFO message received
+DEBUG (2): Position X: 168, Y: 210
+DEBUG (2): Sensor status: STANDING
+DEBUG (3): Packet sent
+DEBUG (3): INFO ack received at time 0:4:33.707458462
+DEBUG (3): Sensing: timer fired at time 0:4:43.463867197
+DEBUG (3): Sensor status: FALLING
+DEBUG (3): Position X: 168, Y: 210
+DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
+DEBUG (2): Message received from node 3 at time 0:4:43.468688956
+DEBUG (2): Payload: type: 2, msg_id: 36, data: FALLING
+DEBUG (2): INFO message received
+DEBUG (2): Position X: 168, Y: 210
+DEBUG (2): Sensor status: FALLING
+DEBUG (2): ALARM: FALLING!
+DEBUG (3): Packet sent
+DEBUG (3): INFO ack received at time 0:4:43.468856802
+DEBUG (3): Sensing: timer fired at time 0:4:53.229492197
+DEBUG (3): Sensor status: STANDING
+DEBUG (3): Position X: 168, Y: 210
+DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
+DEBUG (2): Message received from node 3 at time 0:4:53.236190776
+DEBUG (2): Payload: type: 2, msg_id: 37, data: STANDING
+DEBUG (2): INFO message received
+DEBUG (2): Position X: 168, Y: 210
+DEBUG (2): Sensor status: STANDING
+DEBUG (3): Packet sent
+DEBUG (3): INFO ack received at time 0:4:53.236358622
+DEBUG (3): Sensing: timer fired at time 0:5:2.995117197
+DEBUG (3): Sensor status: STANDING
+DEBUG (3): Position X: 168, Y: 210
+DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
+DEBUG (2): Message received from node 3 at time 0:5:3.004318203
+DEBUG (2): Payload: type: 2, msg_id: 38, data: STANDING
+DEBUG (2): INFO message received
+DEBUG (2): Position X: 168, Y: 210
+DEBUG (2): Sensor status: STANDING
+DEBUG (3): Packet sent
+DEBUG (3): INFO ack received at time 0:5:3.004486049
+DEBUG (3): Sensing: timer fired at time 0:5:12.760742197
+DEBUG (3): Sensor status: STANDING
+DEBUG (3): Position X: 168, Y: 210
+DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
+DEBUG (2): Message received from node 3 at time 0:5:12.768432592
+DEBUG (2): Payload: type: 2, msg_id: 39, data: STANDING
+DEBUG (2): INFO message received
+DEBUG (2): Position X: 168, Y: 210
+DEBUG (2): Sensor status: STANDING
+DEBUG (3): Packet sent
+DEBUG (3): INFO ack received at time 0:5:12.768600438
+DEBUG (3): Sensing: timer fired at time 0:5:22.526367197
+DEBUG (3): Sensor status: WALKING
+DEBUG (3): Position X: 168, Y: 210
+DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
+DEBUG (3): Packet sent
+DEBUG (3): INFO ack not received at time 0:5:22.534423801
+DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 2
+DEBUG (2): Message received from node 3 at time 0:5:22.542526170
+DEBUG (2): Payload: type: 2, msg_id: 41, data: WALKING
+DEBUG (2): INFO message received
+DEBUG (2): Position X: 168, Y: 210
+DEBUG (2): Sensor status: WALKING
+DEBUG (3): Packet sent
+DEBUG (3): INFO ack received at time 0:5:22.542694016
+DEBUG (3): Sensing: timer fired at time 0:5:32.291992197
+DEBUG (3): Sensor status: STANDING
+DEBUG (3): Position X: 168, Y: 210
+DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
+DEBUG (2): Message received from node 3 at time 0:5:32.297866807
 DEBUG (2): Payload: type: 2, msg_id: 42, data: STANDING
 DEBUG (2): INFO message received
-DEBUG (2): Position X: 248, Y: 226
+DEBUG (2): Position X: 168, Y: 210
 DEBUG (2): Sensor status: STANDING
 DEBUG (3): Packet sent
-DEBUG (3): INFO ack not received at time 0:6:21.126647936
-DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 2
-DEBUG (2): Message received from node 3 at time 0:6:21.130020109
-DEBUG (2): Payload: type: 2, msg_id: 43, data: STANDING
+DEBUG (3): INFO ack received at time 0:5:32.298034652
+DEBUG (3): Sensing: timer fired at time 0:5:42.057617197
+DEBUG (3): Sensor status: WALKING
+DEBUG (3): Position X: 168, Y: 210
+DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
+DEBUG (2): Message received from node 3 at time 0:5:42.064102155
+DEBUG (2): Payload: type: 2, msg_id: 43, data: WALKING
 DEBUG (2): INFO message received
-DEBUG (2): Position X: 248, Y: 226
+DEBUG (2): Position X: 168, Y: 210
+DEBUG (2): Sensor status: WALKING
+DEBUG (3): Packet sent
+DEBUG (3): INFO ack received at time 0:5:42.064270000
+DEBUG (3): Sensing: timer fired at time 0:5:51.823242197
+DEBUG (3): Sensor status: STANDING
+DEBUG (3): Position X: 168, Y: 210
+DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
+DEBUG (2): Message received from node 3 at time 0:5:51.834289506
+DEBUG (2): Payload: type: 2, msg_id: 44, data: STANDING
+DEBUG (2): INFO message received
+DEBUG (2): Position X: 168, Y: 210
 DEBUG (2): Sensor status: STANDING
 DEBUG (3): Packet sent
-DEBUG (3): INFO ack received at time 0:6:21.130187955
+DEBUG (3): INFO ack received at time 0:5:51.834457352
+DEBUG (3): Sensing: timer fired at time 0:6:1.588867197
+DEBUG (3): Sensor status: STANDING
+DEBUG (3): Position X: 168, Y: 210
+DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
+DEBUG (2): Message received from node 3 at time 0:6:1.597946134
+DEBUG (2): Payload: type: 2, msg_id: 45, data: STANDING
+DEBUG (2): INFO message received
+DEBUG (2): Position X: 168, Y: 210
+DEBUG (2): Sensor status: STANDING
+DEBUG (3): Packet sent
+DEBUG (3): INFO ack received at time 0:6:1.598113979
+DEBUG (3): Sensing: timer fired at time 0:6:11.354492197
+DEBUG (3): Sensor status: RUNNING
+DEBUG (3): Position X: 168, Y: 210
+DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
+DEBUG (2): Message received from node 3 at time 0:6:11.358734126
+DEBUG (2): Payload: type: 2, msg_id: 46, data: RUNNING
+DEBUG (2): INFO message received
+DEBUG (2): Position X: 168, Y: 210
+DEBUG (2): Sensor status: RUNNING
+DEBUG (3): Packet sent
+DEBUG (3): INFO ack received at time 0:6:11.358901971
+DEBUG (3): Sensing: timer fired at time 0:6:21.120117197
+DEBUG (3): Sensor status: STANDING
+DEBUG (3): Position X: 168, Y: 210
+DEBUG (3): Radio: sanding INFO packet to node 2, attempt: 1
+DEBUG (2): Message received from node 3 at time 0:6:21.122772221
+DEBUG (2): Payload: type: 2, msg_id: 47, data: STANDING
+DEBUG (2): INFO message received
+DEBUG (2): Position X: 168, Y: 210
+DEBUG (2): Sensor status: STANDING
+DEBUG (3): Packet sent
+DEBUG (3): INFO ack received at time 0:6:21.122940067
 
 Simulation finished!
 
  >>SERIAL FORWARDER>> serial port used:  /dev/ttyS0 <<
 
 Sending to serial port the line:  DEBUG (2): ALARM: FALLING!
+
+Sending to serial port the line:  DEBUG (0): ALARM: MISSING
 
 Sending to serial port the line:  DEBUG (2): ALARM: FALLING!
 
