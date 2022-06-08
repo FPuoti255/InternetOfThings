@@ -1,5 +1,8 @@
 Smart Bracelet Report
 ===
+Francesco Puoti : 10595640 \
+Daniele Casciani : 10638165
+===
 
 Description of the software for Smart Bracelet, based on TinyOS.
 
