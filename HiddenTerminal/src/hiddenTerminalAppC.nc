@@ -1,4 +1,4 @@
-#include "hiddenTerminal.h".
+#include "hiddenTerminal.h"
 #include "printf.h"
 
 

@@ -73,7 +73,7 @@ module hiddenTerminalC {
 		
 		msg->type = RTS;
 		
-		printf("NODE%d is sending RTS to NODE%d\n", TOS_NODE_ID, BASE_STATION);
+		printf("Sending RTS to the Base Station(%d)\n", BASE_STATION);
 		
 		ackListener = TRUE;
 
@@ -101,7 +101,7 @@ module hiddenTerminalC {
 
 		msg->type = CTS;
 		
-		printf("NODE%d is sending CTS to NODE%d\n", TOS_NODE_ID, current_sender);
+		printf("Sending CTS to NODE%d\n", current_sender);
 		
 		ackListener = TRUE;
 
@@ -129,7 +129,7 @@ module hiddenTerminalC {
 		msg->type = DATA;
 		msg->data = sequential_data;
 		
-		printf("NODE%d is sending DATA to NODE%d\n", TOS_NODE_ID, BASE_STATION);
+		printf("Sending DATA = %d to the Base Station(%d)\n", sequential_data, BASE_STATION);
 		
 		ackListener = TRUE;
 
@@ -152,34 +152,35 @@ module hiddenTerminalC {
 	
 	/****************************** TIMERS *******************************/
 	void sendingProcedure(){
-	  		if(to_send == 0) { //no packet have to be send, thus generate a new sample from the poiss
-	  			to_send = samplePoisson(); //return number of packet sent in X milliseconds
-	  			
-	  			call timerWait.startOneShot(X); //wait X milliseconds before retry
-	  			
-	  			printf("NODE%d sendingProcedure - no messagge to sent\n", TOS_NODE_ID);
-	  		} else {
+	  		if(to_send == 0) { //no packet have to be sent, thus generate a new sample from the poiss
+	  			to_send = samplePoisson();
+  			} //return number of packet sent in X milliseconds
+	  		
+	  		if(to_send != 0){
 	  			time_to_send = X / to_send; //time after that is sent the first packet
 	  			
 	  			call timerSend.startPeriodic(time_to_send);
 	  			
-	  			printf("NODE%d sendingProcedure - message will be sent..\n", TOS_NODE_ID);
+	  			printf("SendingProcedure - %d messages to send\n", to_send);
+	  		} else {
+	  			call timerWait.startOneShot(X); //wait X milliseconds before retry	  			
+	  			printf("SendingProcedure - no message to send\n");	  			
 	  		}		
 	  }
 	  
 	//starting timer
 	event void AMControl.startDone(error_t error){
 		if(error == SUCCESS) {
-	  	 	printf("NODE%d Antenna succesfully started!\n\n", TOS_NODE_ID);  
+	  	 	printf("Antenna succesfully started!\n");  
 			if(TOS_NODE_ID != BASE_STATION){
 				sendingProcedure();		
 			
 			}else{
-				printf("A BASE_STATION EXISTS\n\n");
+				printf("BASE_STATION STARTED. ID = %d \n", BASE_STATION);
 			}
 		
 		}else {
-	  	  	printf("NODE%d Failed to start antenna, retrying\n", TOS_NODE_ID);
+	  	  	printf("Failed to start antenna, retrying\n");
 		  	call AMControl.start();	  
 		}
 	}
@@ -187,18 +188,28 @@ module hiddenTerminalC {
 	
 	//timer send event
 	event void timerSend.fired(){
-		if (to_send != 0){
-	  			post sendRTS();
-	  				  	
-	  	}else{
-	  		sequential_data = 0;
-	  		call timerSend.stop();
-	  		sendingProcedure();	
-	  	}
+		if(phase != WAIT_PHASE){
+			if (to_send != 0){
+		  		post sendRTS();
+		  				  	
+		  	}else{
+		  		sequential_data = 0;
+		  		call timerSend.stop();
+		  		sendingProcedure();	
+		  	}		
+		}else{
+			printf("An error occurred. TimerSend elapsed while in WAIT_PHASE.\n");
+		}
 	}
 	//timer wait event
 	event void timerWait.fired(){
-		sendingProcedure();
+		if (phase == RTS){
+			printf("TimerWait elapsed. Re-starting the sending procedure.\n");
+			phase = RTS;
+			sendingProcedure();		
+		}else{
+			printf("An error occurred. TimerWait elapsed while in phase: %d.\n", phase);
+		}
 	}
 	
 	
@@ -232,7 +243,7 @@ module hiddenTerminalC {
 						phase = RTS;
 					
 					}else{
-						printf("ack recived \n");
+						printf("ack received \n");
 					}				
 
 					//deactivate ack listener
@@ -273,13 +284,11 @@ module hiddenTerminalC {
 		//pairing ack - datagram instantiation
 		my_msg_t* msg = (my_msg_t*)payload;
 		
-		//case 1: the incoming packet is a RST
+		//case 1: the incoming packet is a RTS
 		if (msg->type == RTS) {
-
-			//log
-			printf("Incoming transmission RTS \n");
 			
 			if(TOS_NODE_ID == BASE_STATION){
+				printf("Incoming transmission RTS \n");
 				
 				// if the BS is available 
 				if (phase == RTS) {
@@ -293,31 +302,41 @@ module hiddenTerminalC {
 					post sendCTS();
 				
 				}else{
-					printf("BS is BUSY \n");
+					printf("Base Station BUSY \n");
 				}
 				
 								
 			}else{
-				printf("NODE%d has received RTS and go in WAIT\n", TOS_NODE_ID);
-				call timerWait.startOneShot(X);
+				if(phase == RTS){
+					printf("RTS detected: WAIT_PHASE\n");
+					phase = WAIT_PHASE;
+					call timerSend.stop();
+					call timerWait.startOneShot(X);				
+				}else{
+					;
+				}
 			}
 		}
 		
 		//case 2: the incoming packet is a CTS
 		if(msg->type == CTS){
 		
-			printf("Incoming transmission CTS \n");
 			
 			if(TOS_NODE_ID == call AMPacket.destination( bufPtr )){
-				printf("has received CTS from %d \n", call AMPacket.source( bufPtr ));
-				printf("sending seq_data %d to %d \n", sequential_data, call AMPacket.source( bufPtr ));
+				printf("CTS from base station (%d) received \n", call AMPacket.source( bufPtr ));
 				printf("passing to DATA mode\n");
 				phase = DATA;
 				post sendDATA();
 				
 			}else{
-				printf("has received CTS and go in WAIT\n");
-				call timerWait.startOneShot(X);
+				if(phase == RTS){
+					printf("CTS for another node detected: WAIT_PHASE\n");
+					phase = WAIT_PHASE;
+					call timerSend.stop();
+					call timerWait.startOneShot(X);				
+				}else{
+					printf("Some error at the BS occured. It's impossible to have two CTS recipient simoultaneously\n");
+				}		
 			}
 			
 		}
@@ -335,12 +354,18 @@ module hiddenTerminalC {
 				phase = RTS;
 								
 			}else{
-				printf("NODE%d has received DATA and go in WAIT\n", TOS_NODE_ID);
-				call timerWait.startOneShot(X);
+				if(phase == RTS){
+					printf("DATA packet of another node detected: WAIT_PHASE\n");
+					phase = WAIT_PHASE;
+					call timerSend.stop();
+					call timerWait.startOneShot(X);				
+				}else{
+					printf("Some error at the BS occured. It's impossible to have DATA of another mote if I'm in CTS\n");
+				}
+				//printf("NODE%d has received DATA and go in WAIT_PHASE\n", TOS_NODE_ID);
+				//call timerWait.startOneShot(X);
 			}
 		}
-		
-
 
 		return bufPtr;
 	}
