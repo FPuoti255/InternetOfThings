@@ -16,6 +16,7 @@ implementation {
   
   components new TimerMilliC() as TimerSend;
   components new TimerMilliC() as TimerWait;
+  components new TimerMilliC() as TimeoutCTS;
   
   components ActiveMessageC;
   components RandomC;
@@ -35,6 +36,7 @@ implementation {
   //Timer interface
   App.timerSend -> TimerSend;
   App.timerWait -> TimerWait;
+  App.timeoutCTS -> TimeoutCTS;
     
   //Interfaces to access package fields
   App.AMControl -> ActiveMessageC;

@@ -15,6 +15,7 @@
 
 typedef nx_struct my_msg {
 	nx_uint8_t type;
+	nx_uint8_t dst;
 	nx_uint16_t data;
 } my_msg_t;
 

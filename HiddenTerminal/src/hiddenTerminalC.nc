@@ -16,6 +16,7 @@ module hiddenTerminalC {
     
    interface Timer<TMilli> as timerSend;
    interface Timer<TMilli> as timerWait;
+   interface Timer<TMilli> as timeoutCTS;
     
    interface SplitControl as AMControl;
    interface PacketAcknowledgements;
@@ -72,20 +73,16 @@ module hiddenTerminalC {
 		my_msg_t* msg = (my_msg_t*)call Packet.getPayload(&packet, sizeof(my_msg_t));
 		
 		msg->type = RTS;
+		msg->dst = BASE_STATION;
 		
-		printf("Sending RTS to the Base Station(%d)\n", BASE_STATION);
+		printf("Sending RTS\n");
 		
-		ackListener = TRUE;
-
-		//request an explicit ack for this transmission
-		call PacketAcknowledgements.requestAck(&packet);
 
 		//transmit
-		if (call AMSend.send(BASE_STATION, &packet, sizeof(my_msg_t)) == SUCCESS) {
+		if (call AMSend.send(AM_BROADCAST_ADDR, &packet, sizeof(my_msg_t)) == SUCCESS) {
 		
 			//transmission done
 			printf("RTS - Transmission OK \n");
-			//printf("RTS - Type: %u \n", msg->type);
 			
 		}else{
 			//transmission error
@@ -100,19 +97,16 @@ module hiddenTerminalC {
 		
 
 		msg->type = CTS;
+		msg->dst = current_sender;
 		
 		printf("Sending CTS to NODE%d\n", current_sender);
-		
-		ackListener = TRUE;
-
-		//request an explicit ack for this transmission
-		call PacketAcknowledgements.requestAck(&packet);
 
 		//transmit
-		if (call AMSend.send(current_sender, &packet, sizeof(my_msg_t)) == SUCCESS) {
+		if (call AMSend.send(AM_BROADCAST_ADDR, &packet, sizeof(my_msg_t)) == SUCCESS) {
 		
 			//transmission done
 			printf("CTS - Transmission OK \n");
+			call timeoutCTS.startOneShot(3*X);
 			//printf("CTS - Type: %u \n", msg->type);
 			
 		}else{
@@ -152,7 +146,7 @@ module hiddenTerminalC {
 	
 	/****************************** TIMERS *******************************/
 	void sendingProcedure(){
-	  		if(to_send == 0) { //no packet have to be sent, thus generate a new sample from the poiss
+	  		if(to_send == 0) { 
 	  			to_send = samplePoisson();
   			} //return number of packet sent in X milliseconds
 	  		
@@ -163,6 +157,7 @@ module hiddenTerminalC {
 	  			
 	  			printf("SendingProcedure - %d messages to send\n", to_send);
 	  		} else {
+	  			phase = WAIT_PHASE;
 	  			call timerWait.startOneShot(X); //wait X milliseconds before retry	  			
 	  			printf("SendingProcedure - no message to send\n");	  			
 	  		}		
@@ -203,13 +198,19 @@ module hiddenTerminalC {
 	}
 	//timer wait event
 	event void timerWait.fired(){
-		if (phase == RTS){
+		if (phase == WAIT_PHASE){
 			printf("TimerWait elapsed. Re-starting the sending procedure.\n");
 			phase = RTS;
 			sendingProcedure();		
 		}else{
 			printf("An error occurred. TimerWait elapsed while in phase: %d.\n", phase);
 		}
+	}
+	
+		//timer wait event
+	event void timeoutCTS.fired(){
+		printf("Data not received by the CTS node. Returning to RTS\n");
+		phase = RTS;
 	}
 	
 	
@@ -222,7 +223,6 @@ module hiddenTerminalC {
 	}
 	
 	event void AMSend.sendDone(message_t *msg, error_t error){
-	
 		if(&packet == msg && error == SUCCESS) {
 	
 			if(ackListener){
@@ -243,34 +243,19 @@ module hiddenTerminalC {
 						phase = RTS;
 					
 					}else{
-						printf("ack received \n");
+						printf("Error: ack received and not in Data phase!\n"); //do nothing, impossible situation
 					}				
 
 					//deactivate ack listener
 					ackListener = FALSE;
 
 				}else{
-				
-					printf("ack was not received \n");
-					
+								
 					if(TOS_NODE_ID != BASE_STATION){
 						if(phase == DATA){
-							printf("RETRY to send DATA \n");
+							printf("Ack for DATA packet not received. RETRY to send DATA \n");
 							post sendDATA();
-						
-						}else{
-							printf("RETRY to send RTS \n");
-							post sendRTS();
-						}
-					}else{
-						//if i'm the BS
-						if(phase == CTS){
-							printf("NOT ACK CTS back to RTS \n"); 
-							phase = RTS;
-						}else{
-							//ramain in RTS	
-						}
-						
+						}						
 					}
 				}
 			}
@@ -284,31 +269,29 @@ module hiddenTerminalC {
 		//pairing ack - datagram instantiation
 		my_msg_t* msg = (my_msg_t*)payload;
 		
+		uint8_t destination = msg->dst;
+		
+		
 		//case 1: the incoming packet is a RTS
 		if (msg->type == RTS) {
 			
-			if(TOS_NODE_ID == BASE_STATION){
+			if(TOS_NODE_ID == BASE_STATION && destination == BASE_STATION){
 				printf("Incoming transmission RTS \n");
 				
 				// if the BS is available 
 				if (phase == RTS) {
-					printf("BS has received RTS \n");
 					current_sender = call AMPacket.source( bufPtr );
-					
-					printf("BS is going in CTS mode \n");
-					phase = CTS;
-					
-					printf("NODE%d has won the CTS \n", current_sender);
-					post sendCTS();
-				
+					printf("BS has received RTS from NODE%d. Going in CTS mode.\n", current_sender);
+					phase = CTS;					
+					post sendCTS();				
 				}else{
-					printf("Base Station BUSY \n");
+					printf("Base Station BUSY. Phase == %d\n", phase);
 				}
 				
 								
 			}else{
 				if(phase == RTS){
-					printf("RTS detected: WAIT_PHASE\n");
+					printf("RTS detected (sender:%d) WAIT_PHASE\n", call AMPacket.source( bufPtr ));
 					phase = WAIT_PHASE;
 					call timerSend.stop();
 					call timerWait.startOneShot(X);				
@@ -322,20 +305,23 @@ module hiddenTerminalC {
 		if(msg->type == CTS){
 		
 			
-			if(TOS_NODE_ID == call AMPacket.destination( bufPtr )){
+			if(TOS_NODE_ID == destination){
 				printf("CTS from base station (%d) received \n", call AMPacket.source( bufPtr ));
 				printf("passing to DATA mode\n");
+				call timerWait.stop(); //it is possible that the CTS has been granted even if I entered the WAIT_PHASE (according to packets concurrency to the Base station) thus I need to stop the timer wait because the transmission can start
 				phase = DATA;
 				post sendDATA();
 				
 			}else{
 				if(phase == RTS){
-					printf("CTS for another node detected: WAIT_PHASE\n");
+					printf("CTS for another node detected (true destination:%d) WAIT_PHASE\n", destination);
 					phase = WAIT_PHASE;
 					call timerSend.stop();
 					call timerWait.startOneShot(X);				
-				}else{
+				}else if (phase == CTS || phase == DATA){
 					printf("Some error at the BS occured. It's impossible to have two CTS recipient simoultaneously\n");
+				}else{
+					; //do nothing, already in wait phase
 				}		
 			}
 			
@@ -344,26 +330,18 @@ module hiddenTerminalC {
 		//case 3: the incoming packet is a DATA
 		if (msg->type == DATA) {
 
-			printf("Incoming transmission DATA \n");
 			
 			if(TOS_NODE_ID == BASE_STATION){
-				printf("BS has received DATA from %d \n", call AMPacket.source( bufPtr ));
-				printf("Incoming seq_data = %d \n", msg-> data);
-				
-				printf("BS is coming back to RTS mode \n");
-				phase = RTS;
-								
-			}else{
-				if(phase == RTS){
-					printf("DATA packet of another node detected: WAIT_PHASE\n");
-					phase = WAIT_PHASE;
-					call timerSend.stop();
-					call timerWait.startOneShot(X);				
+				if( call AMPacket.source( bufPtr ) == current_sender){				
+					printf("BS has received DATA from %d \n", call AMPacket.source( bufPtr ));
+					printf("Incoming seq_data = %d \n", msg-> data);
+					printf("BS is coming back to RTS mode \n");
+					call timeoutCTS.stop();
+					phase = RTS;
 				}else{
-					printf("Some error at the BS occured. It's impossible to have DATA of another mote if I'm in CTS\n");
+					printf("Error: data packet from a non-CTS node arrived\n");
 				}
-				//printf("NODE%d has received DATA and go in WAIT_PHASE\n", TOS_NODE_ID);
-				//call timerWait.startOneShot(X);
+								
 			}
 		}
 
