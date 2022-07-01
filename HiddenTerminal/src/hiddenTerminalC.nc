@@ -26,21 +26,25 @@ module hiddenTerminalC {
 
 } implementation {
 	
-  uint8_t phase = RTS;
-  
-  bool ackListener = FALSE;
+	uint8_t phase = RTS;
 
-  uint8_t current_sender = 0; // node that is currently allowed to send data due to RTS/CTS procedure
-  
-  uint8_t sequential_data = 0;
-  uint8_t to_send = 0;
-  uint32_t time_to_send = 0;
-  
-    
-  message_t packet;
-  
-  bool locked;
-  
+	bool ackListener = FALSE;
+
+	uint8_t current_sender = 0; // node that is currently allowed to send data due to RTS/CTS procedure
+
+	uint8_t sequential_data = 0;
+	uint8_t to_send = 0;
+	uint32_t time_to_send = 0;
+		
+	message_t packet;
+
+	bool locked;
+	
+	//used for statistical stuff
+	int total[10] = {0};	
+	int success[10] = {0};
+	int s;
+
 
   
   //***************** POISSON ********************//		
@@ -207,10 +211,18 @@ module hiddenTerminalC {
 		}
 	}
 	
-		//timer wait event
+	//timer timeoutCTS event
 	event void timeoutCTS.fired(){
 		printf("Data not received by the CTS node. Returning to RTS\n");
 		phase = RTS;
+		
+		//update statistics
+		s = current_sender;
+	
+		total[s] = total[s] + 2;
+		success[s] = success[s] + 1;
+		printf("node: %d tot: %d succ: %d PER: %d%\n", s, total[s], success[s], ((total[s]-success[s])/(total[s]))*100);
+		
 	}
 	
 	
@@ -276,7 +288,17 @@ module hiddenTerminalC {
 		if (msg->type == RTS) {
 			
 			if(TOS_NODE_ID == BASE_STATION && destination == BASE_STATION){
+				
+				
 				printf("Incoming transmission RTS \n");
+				
+				//RTS recived successful +1 and total +1
+				//TODO è un successo se mi arriva un RTS ma non sono disponibile?
+				s = call AMPacket.source( bufPtr );
+				
+				total[s]++;
+				success[s]++;
+				//printf("node: %d tot: %d succ: %d PER: %d%\n", s, total[s], success[s], ((total[s]-success[s])/total[s])*100);
 				
 				// if the BS is available 
 				if (phase == RTS) {
@@ -332,12 +354,22 @@ module hiddenTerminalC {
 
 			
 			if(TOS_NODE_ID == BASE_STATION){
+			
+			
 				if( call AMPacket.source( bufPtr ) == current_sender){				
 					printf("BS has received DATA from %d \n", call AMPacket.source( bufPtr ));
 					printf("Incoming seq_data = %d \n", msg-> data);
 					printf("BS is coming back to RTS mode \n");
 					call timeoutCTS.stop();
 					phase = RTS;
+					
+					//update statistics
+					s = current_sender;
+					
+					total[s] = total[s] + 2;
+					success[s] = success[s] + 2;
+					//printf("node: %d tot: %d succ: %d PER: %d%\n", s, total[s], success[s], ((total[s]-success[s])/total[s])*100);
+				
 				}else{
 					printf("Error: data packet from a non-CTS node arrived\n");
 				}
