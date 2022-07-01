@@ -41,8 +41,8 @@ module hiddenTerminalC {
 	bool locked;
 	
 	//used for statistical stuff
-	int total[10] = {0};	
-	int success[10] = {0};
+	int total[NODES] = {0};	
+	int success[NODES] = {0};
 	int s;
 
 
@@ -213,15 +213,26 @@ module hiddenTerminalC {
 	
 	//timer timeoutCTS event
 	event void timeoutCTS.fired(){
+		uint8_t lost = 0;
+		float per = 0.0;
+		//char fractional_part[10];
+		uint16_t fractional = 0;
+		
 		printf("Data not received by the CTS node. Returning to RTS\n");
 		phase = RTS;
 		
 		//update statistics
-		s = current_sender;
+		s = current_sender - 2 ;
 	
 		total[s] = total[s] + 2;
 		success[s] = success[s] + 1;
-		printf("node: %d tot: %d succ: %d PER: %d%\n", s, total[s], success[s], ((total[s]-success[s])/(total[s]))*100);
+		
+		lost = total[s] - success[s];
+		
+		per = (float)((float)lost / (float)total[s]);
+		
+		fractional = (int) ( (per - (int) per) * 1000);
+		printf("node: %d tot: %d succ: %d PER: %d.%u %\n", s+2, total[s], success[s], (int)per, fractional);
 		
 	}
 	
@@ -293,12 +304,10 @@ module hiddenTerminalC {
 				printf("Incoming transmission RTS \n");
 				
 				//RTS recived successful +1 and total +1
-				//TODO è un successo se mi arriva un RTS ma non sono disponibile?
-				s = call AMPacket.source( bufPtr );
+				s = call AMPacket.source( bufPtr ) - 2;
 				
 				total[s]++;
 				success[s]++;
-				//printf("node: %d tot: %d succ: %d PER: %d%\n", s, total[s], success[s], ((total[s]-success[s])/total[s])*100);
 				
 				// if the BS is available 
 				if (phase == RTS) {
@@ -364,11 +373,10 @@ module hiddenTerminalC {
 					phase = RTS;
 					
 					//update statistics
-					s = current_sender;
+					s = current_sender -2 ;
 					
 					total[s] = total[s] + 2;
 					success[s] = success[s] + 2;
-					//printf("node: %d tot: %d succ: %d PER: %d%\n", s, total[s], success[s], ((total[s]-success[s])/total[s])*100);
 				
 				}else{
 					printf("Error: data packet from a non-CTS node arrived\n");

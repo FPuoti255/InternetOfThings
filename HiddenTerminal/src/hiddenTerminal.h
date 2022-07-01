@@ -8,8 +8,9 @@
 #define CTS 1 
 #define DATA 2
 #define WAIT_PHASE 3
-#define X 1000 // milliseconds == 1 sec 
+#define X 5000 // milliseconds == 1 sec 
 #define LAMBDA 3 //this is the expected value of the poisson distribution 3 packets/secons
+#define NODES 100
 
 
 
